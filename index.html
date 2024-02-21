@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./media/wand.ico" type="image/x-icon">
+
+    <!--Styles-->
+    <link rel="stylesheet" href="/css/resert.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/pergamino.css">
+    <link rel="stylesheet" href="/css/click.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <title>Hogwarts</title>
+    <meta name="description" content="Embark on a magical journey with Hogwarts Adventure, an interactive web experience inspired by the world of Harry Potter." />
+
+    <!--Scripts-->
+
+  </head>
+  <body>
+    <!-- AUDIO -->
+    <audio autoplay loop muted id="bgAudio">
+      <source src="./media/hedwigsTheme.mp3" type="audio/mp3" />
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+    <button id="muteButton">
+      <i class="bx bx-volume-full"></i>
+    </button>
+    <header>
+
+
+      <!-- VIDEO -->
+      <video autoplay muted loop id="bgVideo">
+        <source src="./media/background.mp4" type="video/mp4" />
+        Tu navegador no soporta el elemento de video.
+      </video>
+      <h1>Hogwarts</h1>
+      <button id="start">start</button>
+
+      <!-- Primera vista despues del play -->
+    </header>
+    <div class="fondo-opaco"></div>
+
+    <div id="play" class="play">
+      <div class="personaje"></div>
+      <div class="pergamino">
+        <div class="rollo"></div>
+        <div class="texto__area">
+          <div class="texto">
+            
+          </div>
+        </div>
+        <div class="rollo"></div>
+      </div>
+    </div>
+   
+
+
+   
+    
+ 
+    <script type="module" src="./js/audio.js" ></script>
+    <script type="module" src="./js/header.js"></script>
+    <script src="./js/alertas.js" ></script>
+    <script type="module" src="./js/pergamino.js"></script> 
+
+  </body>
+</html>

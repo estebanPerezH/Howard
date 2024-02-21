@@ -1,0 +1,285 @@
+:root {
+  --color1: #CC9544;
+  --color2: #a05e0d;
+  --color3: #361500;
+  --color4: #1C0A00;
+}
+
+.play{
+  opacity: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../media/personajes/scena-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 3s ease-in-out;
+  z-index: 0;
+}
+
+.disappear{
+  opacity: 0;
+}
+
+.appear{
+  opacity: 1;
+}
+
+.personaje{
+  background-image: url("../media/personajes/albus-512.png");
+  height: 35vh;
+  width: 20vw;
+  top: 10%;
+  left: 10%;
+  opacity: 1;
+  position: absolute;
+  align-self: flex-start;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  margin-left: 10%;
+  transition: .4s ease-in;
+  z-index: 3;
+}
+
+.personajeAbajo{
+  top: unset;
+  left: -10%;
+  bottom: -5%;
+}
+
+.pergamino {
+  position: relative;
+  top: 5%;
+  width: 80%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  transition: 1s ease-in-out;
+  align-items: center;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.pergaminoArriba{
+  height: 30vh;
+  width: 90vw;
+  transform: translateY(-40vh);
+}
+
+
+.error-message {
+  font-family: "font";
+  font-size: 30px;
+  text-align: center;
+  color: #000000;
+  background-color: var(--color1);
+  border-radius: 1.2rem 0 1.2rem 0 / 2rem 0 2rem 0 ;
+  font-family: font-feather;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: capitalize;
+  border: .2rem ridge var(--color3);
+
+  padding: 25px;
+  border-radius: 21px;
+  visibility: visible;
+  display: none;
+  margin-bottom: -57px;
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 15;
+}
+
+/* Estilo para oscurecer el fondo */
+.fondo-opaco {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Color semitransparente */
+  z-index: 14; /* Un z-index inferior al de la alerta */
+  opacity: 0; /* Empieza con opacidad 0 */
+  transition: opacity 0.5s ease-in-out;
+  display: none; /* Inicialmente oculto */
+}
+
+.rollo {
+  position: relative;
+  width: 7rem;
+  height: 80%;
+  background: linear-gradient(90deg, 
+    var(--color2) 0%,   /* desde el inicio (0%) */
+    var(--color1) 30% 70%,  /* desde el 30% hasta el 70% */
+    var(--color2)100%  /* desde el 70% hasta el final (100%) */
+);
+  background-size: 100% 100%;
+  border-radius: 1rem 1rem 1rem 1rem / .3rem .3rem .3rem .3rem;
+  transition: 2.8s linear;
+  transform: translateX(-8%);
+}
+
+.rollo:first-child{
+  transform: translateX(8%);
+}
+
+.rollo::before,.rollo::after {
+  left: 25%;
+  top: -10%;
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 10%;
+  border-radius: 1rem 1rem 0 0 / .2rem .2rem 0 0;
+  background: linear-gradient(90deg, 
+  var(--color4) 0%,   
+  var(--color3) 40% 60%,  
+  var(--color4) 80% 100%  
+);
+}
+
+.rollo::after {
+  top: unset;
+  bottom: -10%;
+  left: 25%;
+  border-radius: 0 0 1rem 1rem / 0 0 .2rem .2rem;
+}
+
+.rolloCerrado{
+    width: 5rem;
+}
+
+.texto__area{
+  width: 10%;
+  height: 70%;
+  display: flex;
+  background-color: var(--color1);
+  box-shadow: inset 0 .3rem .5rem var(--color2),
+  inset 0 -.3rem .5rem var(--color2) ;
+  transition: 3s ease-out ;
+  padding: 0 1rem;
+}
+
+.texto {
+  font-size: calc(1.5vh + 2vw );
+  height: 50%;
+  width: 120%;
+}
+
+.textoAbierto{
+    width: 80%;
+}
+
+.input{
+  position: absolute;
+  outline: none;
+  width: 50%;
+  margin: 2rem 0;
+  height: 2rem;
+  background-color: var(--color1);
+  border-radius: 1.2rem 0 1.2rem 0 / 2rem 0 2rem 0 ;
+  padding: 1rem;
+  font-family: font-feather;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: capitalize;
+  border: .2rem ridge var(--color3);
+  z-index: 20;
+  bottom: 10%;
+}
+
+input::placeholder{
+  font-style: italic;
+  text-transform: none;
+  color: var(--color2);
+  opacity: .5;
+}
+
+
+.contenedorFilas{
+  top: 15%;
+  left: -100vw;
+  position: absolute;
+  height: 60vh;
+  width: 90vw;
+  padding: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: 1s ease-in-out;
+  gap: 1rem;
+  z-index: 30;
+}
+.patinarAlCentro{
+  left: 0;
+}
+
+.carta{
+  position: relative;
+  width: 15vw;
+  height: 10vw;
+  display: flex;
+  justify-content: center;
+  text-transform: capitalize;
+  align-items: center;
+  background-color: #eed7ad;
+  font-size: calc(1.5vw + 1vw);
+  box-shadow: inset 0 0 2rem 1rem var(--color3);
+  cursor: pointer;
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+  transition: 1s ease-in-out;
+}
+
+.carta h4{
+  color: var(--color2);
+  text-align: center;
+  letter-spacing: .15rem;
+  font-weight: bolder;
+  backface-visibility: hidden;
+  font-style: italic;
+}
+
+.cartaFlip{
+  transform: rotateY(0deg) rotateZ(360deg);
+}
+
+.sign{
+  position: absolute;
+  transform-origin: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  color: var(--color2);
+  font-family: font;
+  font-size: 3rem;
+  animation: big-zoom 5s ease-in-out forwards;
+  text-shadow: .1rem 0 .1rem var(--color3), 
+              -.1rem 0 .2rem var(--color3),
+              0 .1rem .1rem var(--color3),
+              0 -.1rem .1rem var(--color3);
+  z-index: 85;
+}
+
+
+@media (orientation: portrait){
+  .personaje{
+    margin: initial;
+    height: 35vh;
+    width: 80vw;
+  }
+  .personajeAbajo{
+    top: unset;
+    bottom: -5%;
+    left: calc(50% - 40vw);
+  }
+}

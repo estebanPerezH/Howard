@@ -1,0 +1,134 @@
+@font-face {
+  font-family: font;
+  src: url(../media/HARRYP__.TTF);
+}
+
+@font-face {
+  font-family: font-feather;
+  src: url(../media/Hamlet-Tertia18.otf);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+:root{
+  --opacidad-negro: 0.5;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: font-feather;
+  background-color: black;
+}
+
+.wand{
+  width: 5vw;
+  top: 10%;
+  left: 90%;
+  z-index: 100;
+  position: absolute;
+  fill: var(--color4);
+  stroke-width: 1rem;
+  stroke: black;
+}
+
+.wand path:last-child{
+  transform: rotateZ(-40deg) translateX(-65%) translateY(20%) ;
+}
+
+.opacity0{
+  opacity: 0;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  gap: 10vh;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+h1 {
+font-family: "font";
+  font-size: calc(7vh + 12vw);
+  position: relative;
+  color: white;
+  text-shadow: 0 0 1rem black;
+  animation: zoom 3s ease-out forwards;
+  transform: perspective(1000px);
+}
+
+header #start{
+  cursor: pointer;
+  color: black;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-family: font-feather;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: .3rem;
+  line-height: 3rem;
+  font-style: italic;
+  border: unset;
+  border: .3rem ridge var(--color3);
+  background-color: var(--color2);
+  border-radius: 1.2rem 0 1.2rem 0 / .8rem 0 .8rem 0 ;
+  padding: .3rem .5rem 0 .5rem;
+  animation: zoom 1s 3s ease-out forwards ;
+  transform: scale(0);
+}
+
+video {
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+  width: 100vw;
+  height: 100vh;
+  transform-origin: 55% 90%;
+}
+
+@keyframes zoom {
+  from{
+    transform: scale(0) ;
+  }
+  to{
+    transform: scale(1.2);
+  }
+}
+
+@keyframes big-zoom {
+  0%{
+    transform: scale(1);
+    opacity: 1;
+    z-index: 99;
+  }
+  50%{
+    opacity: .8;
+  }
+  100%{
+    transform: scale(10);
+    opacity: 0;
+  }
+}
+
+@keyframes patinar {
+  from{
+    opacity: 0;
+    transform: translateX(20%);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
